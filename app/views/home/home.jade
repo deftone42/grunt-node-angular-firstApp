@@ -1,0 +1,5 @@
+div(ng-controller="articleController" class='content')
+	h1 {{title}} - Articles
+	div(ng-include="'/views/home/article/list.html'")
+	a(ui-sref="postArticle") 
+		button(class='btn btn-primary') Create Article

@@ -1,0 +1,10 @@
+div(class='container jumbotron' ng-controller='articleController')
+	div(class='col-sm-12 text-center')
+		form
+			div(class='form-group')
+				text-input(model='articleData.title', type='title')
+				text-input(model='articleData.nick', type='nick')
+				text-input(model='articleData.tags', type='tags')
+				textarea(class='form-control sg-input', placeholder='Insert the content of the article', ng-model='articleData.content')
+
+			button(type='submit', class='btn btn-small btn-primary', ng-click='createArticle()') Add Article

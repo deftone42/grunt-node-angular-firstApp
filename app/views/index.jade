@@ -1,0 +1,10 @@
+doctype html
+html(lang='es', ng-app='FirstApp')
+  head
+    title First App
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+    script(type='text/javascript', src='js/vendor.min.js')
+    script(type='text/javascript', src='js/app.js')
+  body(ng-controller='appController')
+    div(ui-view)
