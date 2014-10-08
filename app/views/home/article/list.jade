@@ -1,23 +1,20 @@
 div(class='container')
 	div(class='col-sm-12')
-		table(id='game-table', class='table table-striped')
+		table(class='table table-striped')
 			thead
 				tr
 					th Title
 					th Nick
 					th Tags
-					th Content
 					th Actions
 			tbody
 				tr(ng-repeat='article in articles')		
 					td
-						a(ng-click='showArticle(article._id)')
+						a(ng-click='goToArticle(article._id)')
 							{{ article.title }}
 					td
 						{{ article.nick }}
-					td
+					td(class='tags')
 						{{ article.tags }}
-					td
-						{{ article.content }}
 					td
 						img(class='sg-icon' src='img/delete.png', ng-click='deleteArticle(article._id)') 

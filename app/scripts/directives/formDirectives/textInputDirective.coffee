@@ -1,3 +1,4 @@
+# Basic directive, using scope parameters
 App.directive "textInput", [ ->
   restrict: 'E'
   replace: true

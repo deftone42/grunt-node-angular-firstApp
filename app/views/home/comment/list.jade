@@ -1,0 +1,19 @@
+div(class='container jumbotron own-jumbotron' ng-controller='commentController')
+	button(class='btn btn-small btn-primary', ng-click='showComments()', ng-hide='show') show {{comments.length}} comments
+	div(ng-show='show', class='size17')
+		h2 Comments
+		ul
+			li(ng-repeat='comment in comments') 
+				p(class='bold justify')
+					{{comment.nick}}
+				p(class='justify tab')
+					{{comment.comment}}
+				hr(class='line')
+
+	div(class='col-sm-12 text-center')
+		form
+			div(class='form-group')
+				text-input(model='commentData.nick', type='nick')
+				textarea(class='form-control text-center', placeholder='Insert a comment', ng-model='commentData.comment')
+
+			button(type='submit', class='btn btn-small btn-primary', ng-click='createComment()') Add Comment

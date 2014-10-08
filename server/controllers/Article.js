@@ -12,12 +12,13 @@ module.exports = function(app){
 		});
 	});
 
-	app.post('/api/article/:article_id', function(req, res) {
+	app.get('/api/article/:article_id', function(req, res) {
 		Article.find({
 			_id : req.params.article_id
 		}, function(err, article) {
 			if (err)
 				res.send(err);
+			
 			res.json(article);
 		});
 	});
@@ -43,17 +44,10 @@ module.exports = function(app){
 					res.json(articles);
 				});
 			});
-		}else{
-			// get and return all the Articles
-			Article.find(function(err, articles) {
-				if (err)
-					console.log('Error!! Articles not found');
-				res.json(articles);
-			});
 		}
 	});
 
-	// delete a article
+	// delete an article
 	app.delete('/api/article/:article_id', function(req, res) {
 		Article.remove({
 			_id : req.params.article_id
@@ -69,6 +63,7 @@ module.exports = function(app){
 		});
 	});
 
+	// Validate data in post method
 	function validate(model) {
 		var valid = true;
 		var object = {};

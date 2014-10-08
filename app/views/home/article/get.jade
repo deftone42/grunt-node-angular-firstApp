@@ -1,8 +1,13 @@
-div(class='container')
+div(class='container', ng-controller='articleController', ng-init='showArticle(params.article_id)')
+	button(class='btn btn-small btn-primary', ng-click='goHome()') Go To article list
 	div(class='col-sm-12')
-		{{currentArticle.nick}}
+		h6 Written by {{currentArticle.nick}}
 		h1 {{currentArticle.title}}
-		div
-			{{currentArticle.content}}
-		div
-			{{currentArticle.tags}}
+		div(class='tab') {{currentArticle.content}} 
+			hr
+			p tags:
+				span(class='tags') {{currentArticle.tags}}
+
+		hr
+
+		div(ng-include="'/views/home/comment/list.html'")

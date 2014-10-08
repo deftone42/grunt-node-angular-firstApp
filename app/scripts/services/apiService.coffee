@@ -1,11 +1,17 @@
+# Api service for calling to database and obtain a response, using promises
 App.service 'ApiService', [ '$http', (http)->
     #Attributes
     apiConf = App.conf.api
     service = {}
 
     #PUBLIC FUNCTIONS
-    service.getList = (model) ->
-      promise = http.post(apiConf[model].route, null)
+    service.getList = (model,id) ->
+      if id?
+        url = apiConf[model].route + id
+      else
+        url = apiConf[model].route
+
+      promise = http.get(url)
         .success (data)->
           data
         .error (data)->
@@ -13,8 +19,8 @@ App.service 'ApiService', [ '$http', (http)->
 
       promise
 
-    service.get = (id,model) ->
-      promise = http.post(apiConf[model].route + id)
+    service.get = (model,id) ->
+      promise = http.get(apiConf[model].route + id)
         .success (data)->
           data
         .error (data)->
@@ -31,8 +37,13 @@ App.service 'ApiService', [ '$http', (http)->
 
       promise
 
-    service.delete = (id,model)->
-      promise = http.delete(apiConf[model].route + id)
+    service.delete = (model,id)->
+      if id?
+        url = apiConf[model].route + id
+      else
+        url = apiConf[model].route
+
+      promise = http.delete(url)
         .success (data)->
           data
         .error (data)->
