@@ -5,10 +5,10 @@
 <p>
 	<label>Installing packages</label>
 	<p>
-		<code>
-			<p>npm install</p>
-			<p>bower install</p>
-		</code>
+		<code>npm install</code>
+	</p>
+	<p>
+		<code>bower install</code>
 	</p>
 </p>
 
