@@ -117,4 +117,5 @@ module.exports = (grunt) ->
 	
 	#Run Default task(s).
 	grunt.registerTask('default', ['watch'])
+	
 	grunt.registerTask('compile', ['newer:coffee','newer:jade','newer:less','newer:image','newer:uglify'])

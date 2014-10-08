@@ -4,23 +4,25 @@
 
 <p>
 	<label>Installing packages</label>
-	<code>
-		npm install
-		bower install
-	</code>
+	<p>
+		<code>
+			<p>npm install</p>
+			<p>bower install</p>
+		</code>
+	</p>
 </p>
 
 <p>
 	<label>Start up the server</label>
-	<code>nodemon --ignore node_modules/ --ignore bower_components/ --ignore public/</code>
+	<p><code>nodemon --ignore node_modules/ --ignore bower_components/ --ignore public/</code></p>
 </p>
 
 <p>
 	<label>Create public folder and compiling Coffee, jade and less files</label>
-	<code>grunt compile</code>
+	<p><code>grunt compile</code></p>
 </p>
 
 <p>
 	<label>Active development compiling</label>
-	<code>grunt</code>
+	<p><code>grunt</code></p>
 </p>
